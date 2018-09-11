@@ -16,7 +16,6 @@ def test_sing():
 def songname(event):
     y=event.widget.get("active")
     i=ALL.get(y)
-    i.play()
 
 
 ##def hl(event):

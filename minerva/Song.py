@@ -12,6 +12,7 @@ class song:
 class Playlist:
     def __init__(self):
         self.songlist=[]
+        self.current_song=None
 
     def add(self,s):
         y=song(s)
@@ -20,6 +21,12 @@ class Playlist:
     def get(self,z):
         for i in self.songlist:
             if i.name==z:
-                ##i.play() and now in reasons why kami is stupid
-                return i
-
+                i.play() ##and now in reasons why kami is stupid
+                self.current_song=i
+                ##and now in kami's display of ugly code we see a DOuble loop
+                for j in range (self.songlist.index(i),len(self.songlist)):
+                    try:
+                        pygame.mixer.music.queue(self.songlist[j].location)
+                    except:
+                        print("REEE")
+                return

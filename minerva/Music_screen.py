@@ -10,17 +10,7 @@ def button_init():
     Lib.bind(minerva.lib_open)
     return [play,Lib]
 
-def get_data(x):
-    load(x)
-
-def load(x=None):
-    if(x):
-        pygame.mixer.music.load("C:/Users/Kevin Selvan/Music/Music/" + str(x))
-        pygame.mixer.music.play()
-##
-##def now_playing():
-##    
-##
+##what the HELL was i thinking
 
 def main():
     pygame.mixer.pre_init(44100,-16,2,2048)
@@ -28,7 +18,6 @@ def main():
     pygame.init()
     buttons= button_init()
     DISP= pygame.display.set_mode((500,400))
-    load()
     while True:
         for e in pygame.event.get():
             if(e.type== QUIT):
