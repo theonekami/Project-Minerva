@@ -11,6 +11,7 @@ class Thread(threading.Thread):
         self.args=args
     def run(self):
         if self.args:
+            print(self.args)
             self.x(self.args)
         else:
             self.x()

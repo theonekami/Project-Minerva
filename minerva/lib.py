@@ -4,6 +4,7 @@ import os,sys
 import Song
 
 
+ALL= Song.Playlist() ##so kids, don't be a kami and use global variables...cause they suck
 
 def test_sing():
     x=[]
@@ -11,15 +12,19 @@ def test_sing():
         x=k
     return x
 
-##SONGS=
+##Time to get Ugly
+def songname(event):
+    y=event.widget.get("active")
+    i=ALL.get(y)
+    i.play()
+
 
 ##def hl(event):
 ##    event.widget.config()[]
 
-def lib(f): ##f is the fucntion to be bound
+def lib(): ##f is the fucntion to be bound
     root=tkinter.Tk() #init meems
     root.winfo_toplevel().title("Minerva")
-    ALL= Song.Playlist()
     
     for i in range(1,4): #I summon 3 EMPTY BUTTONS
         y= Button(root,width=10)
@@ -34,8 +39,8 @@ def lib(f): ##f is the fucntion to be bound
         ALL.add(i)
         x.insert(END,i) #this i need to change....some FUckin how 
         
-    x.bind("<Double-Button-1>",f)#so many undos later kms
-    x.bind("<Return>",f)
+    x.bind("<Double-Button-1>",songname)#so many undos later kms
+    x.bind("<Return>",songname)
     x.config(yscrollcommand=s.set)
     s.config(command=x.yview)
 

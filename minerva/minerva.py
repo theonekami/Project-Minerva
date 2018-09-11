@@ -12,7 +12,7 @@ def songname(event):
     Music_screen.get_data(y)
 
 def lib_open():
-    Menu=thread.Thread(1, "Library",0,lib.lib,songname)
+    Menu=thread.Thread(1, "Library",0,lib.lib)
     if(not Menu.is_alive()):
         Menu.start()
     else:
