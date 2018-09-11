@@ -4,8 +4,10 @@ class song:
     def __init__(self, k):
         self.name=k
         self.location="C:/Users/Kevin Selvan/Music/Music/" + str(self.name) #i  promise to gods there better be a better way to do this T-T
+        
 
     def play(self):
+        print("playing" + self.name)
         pygame.mixer.music.load(self.location)
         pygame.mixer.music.play()
 
@@ -23,10 +25,14 @@ class Playlist:
             if i.name==z:
                 i.play() ##and now in reasons why kami is stupid
                 self.current_song=i
-                ##and now in kami's display of ugly code we see a DOuble loop
-                for j in range (self.songlist.index(i),len(self.songlist)):
-                    try:
-                        pygame.mixer.music.queue(self.songlist[j].location)
-                    except:
-                        print("REEE")
+                i.set_endevent(self.)
+            ##and now in kami's display of ugly code we see a DOuble loop
+                ##Which is ELIMINTAED
+##                for j in range (self.songlist.index(i),len(self.songlist)):
+##                    try:
+##                        pygame.mixer.music.queue(self.songlist[j].location)
+##                    except:
+##                        print("e")
+##                    else:
+##                        print("added "+self.songlist[j].name)
                 return

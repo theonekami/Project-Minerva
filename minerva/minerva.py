@@ -22,9 +22,6 @@ def lib_open():
 
 def main_run():
     f1=Music_screen.main
-
     Start=thread.Thread(0,"mainplayloop",0,f1)
     Start.start()
-
-
 
